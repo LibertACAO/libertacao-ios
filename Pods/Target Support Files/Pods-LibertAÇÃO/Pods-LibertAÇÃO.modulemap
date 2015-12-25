@@ -1,0 +1,6 @@
+framework module Pods_LibertAC_A_O {
+  umbrella header "Pods-LibertAÇÃO-umbrella.h"
+
+  export *
+  module * { export * }
+}
