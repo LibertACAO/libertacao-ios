@@ -9,20 +9,70 @@
 import UIKit
 import Parse
 
-class NotificationsViewController: UITableViewController {
 
-    var notifications = [String]()
+enum EventType: Int {
+    case FUNDRAISER = 1, PETITION, PROTEST, NEWS, OTHERS, SIX
+    static let allValues = [FUNDRAISER, PETITION, PROTEST, NEWS, OTHERS, SIX]
+
+    func toString() -> String {
+        switch self {
+        case .FUNDRAISER:
+            return "Fundraiser"
+        case .PETITION:
+            return "Petition"
+        case .PROTEST:
+            return "Protest"
+        case .NEWS:
+            return "News"
+        case .OTHERS:
+            return "Others"
+        case .SIX:
+            return "Six"
+        }
+    }
+}
+
+struct Notification {
+    let title: String
+    let type: EventType
+
+    init(title: String, type: Int) {
+        self.title = title
+        self.type = EventType(rawValue: type)!
+    }
+
+}
+class NotificationsViewController: UITableViewController,
+                                   UISearchResultsUpdating, UISearchBarDelegate {
+
+    var notifications = [Notification]()
+    var filteredNotifications = [Notification]()
+    let searchController = UISearchController(searchResultsController: nil)
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.scopeButtonTitles = ["All"] + EventType.allValues.map { (event) -> String in
+            return event.toString()
+        }
+        searchController.searchBar.delegate = self
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+
         PFQuery(className: "Event").whereKey("enabled", equalTo: true)
             .findObjectsInBackgroundWithBlock { (events, error) -> Void in
             if error == nil {
                 if let events = events {
+                    self.notifications.removeAll(keepCapacity: false)
                     for event in events {
                         print(event["title"])
-                        notifications.append(event["title"])
+                        self.notifications.append(
+                            Notification(title: AnyObj2String(event["title"]),
+                                         type: (event["type"] as? Int)!))
                     }
+                    self.tableView.reloadData()
                 }
             } else {
                 print("Error: \(error!) \(error!.userInfo)")
@@ -50,20 +100,45 @@ class NotificationsViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return notifications.count
+        if searchController.active && searchController.searchBar.text != "" {
+            return filteredNotifications.count
+        } else {
+            return notifications.count
+        }
     }
+
     override func tableView(tableView: UITableView,
                             cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-
-
-
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
-        let object = notifications[indexPath.row] // as! NSDate
-        //        cell.textLabel!.text = object.description
-        cell.textLabel?.text = object
+        let object: Notification
+        if searchController.active && searchController.searchBar.text != "" {
+            object = filteredNotifications[indexPath.row]
+        } else {
+            object = notifications[indexPath.row]
+        }
+        cell.textLabel?.text = object.title
         return cell
+    }
+
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        filteredNotifications = notifications.filter { notification in
+            let categoryMatch = (scope == "All") || (notification.type.toString() == scope)
+            return categoryMatch && notification.title.lowercaseString.containsString(
+                searchController.searchBar.text!.lowercaseString)
+        }
+        tableView.reloadData()
+    }
+
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
+
+    func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
     }
 
 

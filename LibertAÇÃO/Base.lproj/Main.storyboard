@@ -133,7 +133,7 @@
             </objects>
             <point key="canvasLocation" x="1521" y="2529"/>
         </scene>
-        <!--Notifications-->
+        <!--Notifications View Controller-->
         <scene sceneID="5in-MK-MbT">
             <objects>
                 <tableViewController id="9RP-jd-Qhf" customClass="NotificationsViewController" customModule="LibertAC_A_O" sceneMemberID="viewController">
@@ -141,9 +141,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="u7m-6J-0i5">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Emc-3w-urS">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Emc-3w-urS" id="LgI-PH-v58">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -156,11 +161,11 @@
                             <outlet property="delegate" destination="9RP-jd-Qhf" id="cw9-kK-Q6G"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Notifications" image="first" id="9rb-Ko-OLf"/>
+                    <navigationItem key="navigationItem" id="gzY-OE-aYP"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjK-LA-g2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="790" y="441"/>
+            <point key="canvasLocation" x="1602" y="441"/>
         </scene>
         <!--External News-->
         <scene sceneID="ImN-da-ihu">
@@ -189,7 +194,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQK-Al-NHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1501" y="436"/>
+            <point key="canvasLocation" x="2313" y="436"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -202,7 +207,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9RP-jd-Qhf" kind="relationship" relationship="viewControllers" id="CAr-V5-rVq"/>
+                        <segue destination="Y1x-pT-wAR" kind="relationship" relationship="viewControllers" id="CAr-V5-rVq"/>
                         <segue destination="hvi-6r-uPm" kind="relationship" relationship="viewControllers" id="HoY-VQ-iGY"/>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="P1j-U8-gzI" kind="relationship" relationship="viewControllers" id="gL2-Xn-DFo"/>
@@ -213,6 +218,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="766" y="1472"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="cRJ-WE-EQ6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y1x-pT-wAR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Notifications" image="first" id="9rb-Ko-OLf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kdk-RR-X4m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9RP-jd-Qhf" kind="relationship" relationship="rootViewController" id="T9U-Lt-0DY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B5G-83-mNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="790" y="441"/>
         </scene>
     </scenes>
     <resources>
