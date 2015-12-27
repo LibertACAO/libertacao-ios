@@ -16,6 +16,7 @@
 		EB3D6D681C2B770E008FF461 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3D6D661C2B770E008FF461 /* LaunchScreen.storyboard */; };
 		EB7CFBD51C2DF84F002C7EF2 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CFBD41C2DF84F002C7EF2 /* Config.swift */; };
 		EB7CFBD71C2E027E002C7EF2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CFBD61C2E027E002C7EF2 /* Utils.swift */; };
+		EB9D22741C2F91E700D1B50F /* ExternalNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D22731C2F91E700D1B50F /* ExternalNewsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EB3D6D691C2B770E008FF461 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB7CFBD41C2DF84F002C7EF2 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		EB7CFBD61C2E027E002C7EF2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		EB9D22731C2F91E700D1B50F /* ExternalNewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExternalNewsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				EB3D6D691C2B770E008FF461 /* Info.plist */,
 				EB7CFBD41C2DF84F002C7EF2 /* Config.swift */,
 				EB7CFBD61C2E027E002C7EF2 /* Utils.swift */,
+				EB9D22731C2F91E700D1B50F /* ExternalNewsController.swift */,
 			);
 			path = "LibertAÇÃO";
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				EB7CFBD51C2DF84F002C7EF2 /* Config.swift in Sources */,
 				EB3D6D5E1C2B770E008FF461 /* EventsViewController.swift in Sources */,
 				EB7CFBD71C2E027E002C7EF2 /* Utils.swift in Sources */,
+				EB9D22741C2F91E700D1B50F /* ExternalNewsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

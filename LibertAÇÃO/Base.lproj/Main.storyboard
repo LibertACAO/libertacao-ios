@@ -73,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1516" y="1152"/>
+            <point key="canvasLocation" x="1576" y="1122"/>
         </scene>
         <!--Vegan Apps-->
         <scene sceneID="xfw-QH-PEZ">
@@ -166,7 +166,7 @@
         <!--External News-->
         <scene sceneID="ImN-da-ihu">
             <objects>
-                <tableViewController id="hvi-6r-uPm" sceneMemberID="viewController">
+                <tableViewController id="hvi-6r-uPm" customClass="ExternalNewsController" customModule="LibertAC_A_O" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Of8-TK-vZt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
