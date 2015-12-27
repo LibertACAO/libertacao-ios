@@ -44,23 +44,24 @@ class ExternalNewsController: UITableViewController, MWFeedParserDelegate {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return news.count
     }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
-        // Configure the cell...
+    override func tableView(tableView: UITableView,
+                            cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let object = news[indexPath.row]
+        cell.textLabel?.text = object
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -127,8 +128,9 @@ class ExternalNewsController: UITableViewController, MWFeedParserDelegate {
     }
 
     func feedParser(parser: MWFeedParser, didParseFeedItem item: MWFeedItem) {
-        print("DELETEME: DID PARSE FEED ITEM")
-        print(item)
+//        print("DELETEME: DID PARSE FEED ITEM")
+//        print(item.title)
+        news.append(item.title)
 //        self.items.append(item)
     }
 

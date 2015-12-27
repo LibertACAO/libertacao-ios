@@ -63,6 +63,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         pickerData = ["All"] + EventType.allValues.map { (event) -> String in
             return event.toString()
         }
+        SVProgressHUD.show()
 
     }
 
@@ -76,7 +77,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     if let events = events {
                         self.notifications.removeAll(keepCapacity: false)
                         for event in events {
-                            print(event["title"])
                             self.notifications.append(
                                 Notification(title: AnyObj2String(event["title"]),
                                     type: (event["type"] as? Int)!))
