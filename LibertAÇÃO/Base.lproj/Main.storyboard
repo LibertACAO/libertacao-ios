@@ -8,7 +8,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
+        <!--Notifications-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="EventsViewController" customModule="LibertAC_A_O" sceneMemberID="viewController">
@@ -65,7 +65,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Notifications" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="eventsTable" destination="ipb-2L-OLW" id="CW5-0T-dze"/>
                         <outlet property="typeFilterPicker" destination="CRJ-JG-Cu1" id="BJJ-eF-OHE"/>
@@ -163,47 +163,6 @@
             </objects>
             <point key="canvasLocation" x="1521" y="2529"/>
         </scene>
-        <!--Notifications View Controller-->
-        <scene sceneID="5in-MK-MbT">
-            <objects>
-                <tableViewController id="9RP-jd-Qhf" customClass="NotificationsViewController" customModule="LibertAC_A_O" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BEX-91-lPZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <segmentedControl key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="OtO-Lw-HD7">
-                            <rect key="frame" x="0.0" y="136" width="600" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
-                                <segment title="Third"/>
-                                <segment title="Fourth"/>
-                                <segment title="Fifth"/>
-                                <segment title="Sixt"/>
-                            </segments>
-                        </segmentedControl>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Emc-3w-urS">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Emc-3w-urS" id="LgI-PH-v58">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="9RP-jd-Qhf" id="6gp-pA-G7B"/>
-                            <outlet property="delegate" destination="9RP-jd-Qhf" id="cw9-kK-Q6G"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="gzY-OE-aYP"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XjK-LA-g2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1602" y="441"/>
-        </scene>
         <!--External News-->
         <scene sceneID="ImN-da-ihu">
             <objects>
@@ -233,6 +192,25 @@
             </objects>
             <point key="canvasLocation" x="2313" y="436"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="KBw-Uz-9VN">
+            <objects>
+                <viewController id="uGy-74-i3N" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ryH-pp-R2f"/>
+                        <viewControllerLayoutGuide type="bottom" id="eO4-wC-md8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vtY-rD-2ZY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="first" id="Mmy-eu-v21"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0KX-ZH-hdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="781"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -245,8 +223,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="Y1x-pT-wAR" kind="relationship" relationship="viewControllers" id="CAr-V5-rVq"/>
                         <segue destination="hvi-6r-uPm" kind="relationship" relationship="viewControllers" id="HoY-VQ-iGY"/>
+                        <segue destination="uGy-74-i3N" kind="relationship" relationship="viewControllers" id="eq5-Bf-7bF"/>
                         <segue destination="P1j-U8-gzI" kind="relationship" relationship="viewControllers" id="gL2-Xn-DFo"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="JGL-i2-CXp" kind="relationship" relationship="viewControllers" id="jGs-Yv-NPI"/>
@@ -254,26 +232,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="1472"/>
-        </scene>
-        <!--Notifications-->
-        <scene sceneID="cRJ-WE-EQ6">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y1x-pT-wAR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notifications" image="first" id="9rb-Ko-OLf"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kdk-RR-X4m">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="9RP-jd-Qhf" kind="relationship" relationship="rootViewController" id="T9U-Lt-0DY"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B5G-83-mNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="790" y="441"/>
+            <point key="canvasLocation" x="804" y="1478"/>
         </scene>
     </scenes>
     <resources>
