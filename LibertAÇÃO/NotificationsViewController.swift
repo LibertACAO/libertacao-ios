@@ -10,38 +10,38 @@ import UIKit
 import Parse
 
 
-enum EventType: Int {
-    case FUNDRAISER = 1, PETITION, PROTEST, NEWS, OTHERS, SIX
-    static let allValues = [FUNDRAISER, PETITION, PROTEST, NEWS, OTHERS, SIX]
-
-    func toString() -> String {
-        switch self {
-        case .FUNDRAISER:
-            return "Fundraiser"
-        case .PETITION:
-            return "Petition"
-        case .PROTEST:
-            return "Protest"
-        case .NEWS:
-            return "News"
-        case .OTHERS:
-            return "Others"
-        case .SIX:
-            return "Six"
-        }
-    }
-}
-
-struct Notification {
-    let title: String
-    let type: EventType
-
-    init(title: String, type: Int) {
-        self.title = title
-        self.type = EventType(rawValue: type)!
-    }
-
-}
+//enum EventType: Int {
+//    case FUNDRAISER = 1, PETITION, PROTEST, NEWS, OTHERS, SIX
+//    static let allValues = [FUNDRAISER, PETITION, PROTEST, NEWS, OTHERS, SIX]
+//
+//    func toString() -> String {
+//        switch self {
+//        case .FUNDRAISER:
+//            return "Fundraiser"
+//        case .PETITION:
+//            return "Petition"
+//        case .PROTEST:
+//            return "Protest"
+//        case .NEWS:
+//            return "News"
+//        case .OTHERS:
+//            return "Others"
+//        case .SIX:
+//            return "Six"
+//        }
+//    }
+//}
+//
+//struct Notification {
+//    let title: String
+//    let type: EventType
+//
+//    init(title: String, type: Int) {
+//        self.title = title
+//        self.type = EventType(rawValue: type)!
+//    }
+//
+//}
 class NotificationsViewController: UITableViewController,
                                    UISearchResultsUpdating, UISearchBarDelegate {
 

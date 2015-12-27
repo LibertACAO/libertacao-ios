@@ -9,10 +9,44 @@
 import UIKit
 import Parse
 
+enum EventType: Int {
+    case FUNDRAISER = 1, PETITION, PROTEST, NEWS, OTHERS, SIX
+    static let allValues = [FUNDRAISER, PETITION, PROTEST, NEWS, OTHERS, SIX]
+
+    func toString() -> String {
+        switch self {
+        case .FUNDRAISER:
+            return "Fundraiser"
+        case .PETITION:
+            return "Petition"
+        case .PROTEST:
+            return "Protest"
+        case .NEWS:
+            return "News"
+        case .OTHERS:
+            return "Others"
+        case .SIX:
+            return "Six"
+        }
+    }
+}
+
+struct Notification {
+    let title: String
+    let type: EventType
+
+    init(title: String, type: Int) {
+        self.title = title
+        self.type = EventType(rawValue: type)!
+    }
+
+}
+
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,
-                           UIPickerViewDataSource,UIPickerViewDelegate {
+                           UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var eventsTable: UITableView!
     var notifications = [Notification]()
+    var filteredNotifications = [Notification]()
     @IBOutlet weak var typeFilterPicker: UIPickerView!
     var pickerData = [String]()
 
@@ -40,6 +74,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                 Notification(title: AnyObj2String(event["title"]),
                                     type: (event["type"] as? Int)!))
                         }
+                        self.filterContentForType("All")
                         self.eventsTable.reloadData()
                     }
                 } else {
@@ -61,18 +96,14 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notifications.count
+        return filteredNotifications.count
     }
 
 
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            print("DELETEME: Cell??")
-
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-
-            let object = notifications[indexPath.row]
-
+            let object = filteredNotifications[indexPath.row]
             cell.textLabel?.text = object.title
             return cell
     }
@@ -91,6 +122,15 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //TODO
+        filterContentForType(pickerData[row])
+    }
+
+    func filterContentForType(type: String) {
+        filteredNotifications = notifications.filter { notification in
+            return (type == "All") || (notification.type.toString() == type)
+//            return categoryMatch //&& notification.title.lowercaseString.containsString(
+//                searchController.searchBar.text!.lowercaseString)
+        }
+        eventsTable.reloadData()
     }
 }
