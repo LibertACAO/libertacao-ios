@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8227F57A3AC443F6415EB1F3 /* Pods_LibertAC_A_O.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEBA20853E943B1163CD5F2 /* Pods_LibertAC_A_O.framework */; };
 		EB3D6D5C1C2B770E008FF461 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D6D5B1C2B770E008FF461 /* AppDelegate.swift */; };
-		EB3D6D5E1C2B770E008FF461 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D6D5D1C2B770E008FF461 /* FirstViewController.swift */; };
+		EB3D6D5E1C2B770E008FF461 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D6D5D1C2B770E008FF461 /* EventsViewController.swift */; };
 		EB3D6D601C2B770E008FF461 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D6D5F1C2B770E008FF461 /* SecondViewController.swift */; };
 		EB3D6D631C2B770E008FF461 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3D6D611C2B770E008FF461 /* Main.storyboard */; };
 		EB3D6D651C2B770E008FF461 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB3D6D641C2B770E008FF461 /* Assets.xcassets */; };
@@ -25,7 +25,7 @@
 		B8D5A6D5539380941ED4752D /* Pods-LibertAÇÃO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibertAÇÃO.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibertAÇÃO/Pods-LibertAÇÃO.release.xcconfig"; sourceTree = "<group>"; };
 		EB3D6D581C2B770E008FF461 /* LibertAÇÃO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LibertAÇÃO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3D6D5B1C2B770E008FF461 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB3D6D5D1C2B770E008FF461 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		EB3D6D5D1C2B770E008FF461 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		EB3D6D5F1C2B770E008FF461 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		EB3D6D621C2B770E008FF461 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB3D6D641C2B770E008FF461 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3D6D5B1C2B770E008FF461 /* AppDelegate.swift */,
-				EB3D6D5D1C2B770E008FF461 /* FirstViewController.swift */,
+				EB3D6D5D1C2B770E008FF461 /* EventsViewController.swift */,
 				EB3D6D5F1C2B770E008FF461 /* SecondViewController.swift */,
 				EB3D6D611C2B770E008FF461 /* Main.storyboard */,
 				EB3D6D641C2B770E008FF461 /* Assets.xcassets */,
@@ -239,7 +239,7 @@
 				EB3D6D601C2B770E008FF461 /* SecondViewController.swift in Sources */,
 				EB3D6D5C1C2B770E008FF461 /* AppDelegate.swift in Sources */,
 				EB7CFBD51C2DF84F002C7EF2 /* Config.swift in Sources */,
-				EB3D6D5E1C2B770E008FF461 /* FirstViewController.swift in Sources */,
+				EB3D6D5E1C2B770E008FF461 /* EventsViewController.swift in Sources */,
 				EB7CFBD31C2DDB3C002C7EF2 /* NotificationsViewController.swift in Sources */,
 				EB7CFBD71C2E027E002C7EF2 /* Utils.swift in Sources */,
 			);

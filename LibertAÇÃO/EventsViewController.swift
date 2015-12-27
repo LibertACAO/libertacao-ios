@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,
+class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,
                            UIPickerViewDataSource,UIPickerViewDelegate {
     @IBOutlet weak var eventsTable: UITableView!
     var notifications = [Notification]()
