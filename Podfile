@@ -5,5 +5,7 @@ use_frameworks!
 
 target 'LibertAÇÃO' do
 	pod 'Parse'
+	pod 'MWFeedParser'
+	pod 'SVProgressHUD'
 end
 

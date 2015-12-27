@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import SwiftRSS
+import MWFeedParser
+import SVProgressHUD
 
-class ExternalNewsController: UITableViewController {
+class ExternalNewsController: UITableViewController, MWFeedParserDelegate {
 
     var news = [String]()
 
@@ -26,15 +27,12 @@ class ExternalNewsController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        let request: NSURLRequest = NSURLRequest(URL: NSURL(string:
-            "http://feeds.feedburner.com/Anda-AgnciaDeNotciasDeDireitosAnimais?format=xml")!)
+        let request = NSURL(string:
+            "https://feeds.feedburner.com/Anda-AgnciaDeNotciasDeDireitosAnimais?format=xml")
+        let feedParser = MWFeedParser(feedURL: request)
+        feedParser.delegate = self
+        feedParser.parse()
 
-        
-
-        RSSParser.parseFeedForRequest(request, callback: { (feed, error) -> Void in
-            print("Feed for : \(feed.title)")
-            print("contains : \(feed.items)")
-        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -108,5 +106,30 @@ class ExternalNewsController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    //MARK: RSS thingsies
+    func feedParserDidStart(parser: MWFeedParser) {
+        SVProgressHUD.show()
+        news.removeAll(keepCapacity: false)
+        
+    }
+
+    func feedParserDidFinish(parser: MWFeedParser) {
+        SVProgressHUD.dismiss()
+        self.tableView.reloadData()
+    }
+
+
+    func feedParser(parser: MWFeedParser, didParseFeedInfo info: MWFeedInfo) {
+        print("DELETEME: DIDI PARSE FEED INFO")
+        print(info)
+//        self.title = info.title
+    }
+
+    func feedParser(parser: MWFeedParser, didParseFeedItem item: MWFeedItem) {
+        print("DELETEME: DID PARSE FEED ITEM")
+        print(item)
+//        self.items.append(item)
+    }
 
 }

@@ -85,9 +85,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-LibertAÇÃO/Bolts.framework"
+  install_framework "Pods-LibertAÇÃO/MWFeedParser.framework"
   install_framework "Pods-LibertAÇÃO/Parse.framework"
+  install_framework "Pods-LibertAÇÃO/SVProgressHUD.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-LibertAÇÃO/Bolts.framework"
+  install_framework "Pods-LibertAÇÃO/MWFeedParser.framework"
   install_framework "Pods-LibertAÇÃO/Parse.framework"
+  install_framework "Pods-LibertAÇÃO/SVProgressHUD.framework"
 fi

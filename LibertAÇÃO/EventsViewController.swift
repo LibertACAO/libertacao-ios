@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import SVProgressHUD
 
 enum EventType: Int {
     case FUNDRAISER = 1, PETITION, PROTEST, NEWS, OTHERS, SIX
@@ -63,8 +64,14 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return event.toString()
         }
 
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        SVProgressHUD.show()
         PFQuery(className: "Event").whereKey("enabled", equalTo: true)
             .findObjectsInBackgroundWithBlock { (events, error) -> Void in
+                SVProgressHUD.dismiss()
                 if error == nil {
                     if let events = events {
                         self.notifications.removeAll(keepCapacity: false)
@@ -82,7 +89,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
         }
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
