@@ -195,7 +195,7 @@
         <!--Profile-->
         <scene sceneID="KBw-Uz-9VN">
             <objects>
-                <viewController id="uGy-74-i3N" sceneMemberID="viewController">
+                <viewController id="uGy-74-i3N" customClass="ProfileViewController" customModule="LibertAC_A_O" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ryH-pp-R2f"/>
                         <viewControllerLayoutGuide type="bottom" id="eO4-wC-md8"/>
@@ -206,15 +206,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="first" id="Mmy-eu-v21"/>
+                    <connections>
+                        <outlet property="tabItem" destination="Mmy-eu-v21" id="hmi-dc-s5E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0KX-ZH-hdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="804" y="781"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tabs Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabsController" customModule="LibertAC_A_O" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>

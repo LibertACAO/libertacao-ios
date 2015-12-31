@@ -17,6 +17,8 @@
 		EB7CFBD51C2DF84F002C7EF2 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CFBD41C2DF84F002C7EF2 /* Config.swift */; };
 		EB7CFBD71C2E027E002C7EF2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CFBD61C2E027E002C7EF2 /* Utils.swift */; };
 		EB9D22741C2F91E700D1B50F /* ExternalNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D22731C2F91E700D1B50F /* ExternalNewsController.swift */; };
+		EBD07F201C349D4900FB4EE4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD07F1F1C349D4900FB4EE4 /* ProfileViewController.swift */; };
+		EBD07F221C34B3FB00FB4EE4 /* TabsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD07F211C34B3FB00FB4EE4 /* TabsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		EB7CFBD41C2DF84F002C7EF2 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		EB7CFBD61C2E027E002C7EF2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		EB9D22731C2F91E700D1B50F /* ExternalNewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExternalNewsController.swift; sourceTree = "<group>"; };
+		EBD07F1F1C349D4900FB4EE4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EBD07F211C34B3FB00FB4EE4 /* TabsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 				EB7CFBD41C2DF84F002C7EF2 /* Config.swift */,
 				EB7CFBD61C2E027E002C7EF2 /* Utils.swift */,
 				EB9D22731C2F91E700D1B50F /* ExternalNewsController.swift */,
+				EBD07F1F1C349D4900FB4EE4 /* ProfileViewController.swift */,
+				EBD07F211C34B3FB00FB4EE4 /* TabsController.swift */,
 			);
 			path = "LibertAÇÃO";
 			sourceTree = "<group>";
@@ -241,6 +247,8 @@
 				EB7CFBD51C2DF84F002C7EF2 /* Config.swift in Sources */,
 				EB3D6D5E1C2B770E008FF461 /* EventsViewController.swift in Sources */,
 				EB7CFBD71C2E027E002C7EF2 /* Utils.swift in Sources */,
+				EBD07F221C34B3FB00FB4EE4 /* TabsController.swift in Sources */,
+				EBD07F201C349D4900FB4EE4 /* ProfileViewController.swift in Sources */,
 				EB9D22741C2F91E700D1B50F /* ExternalNewsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
