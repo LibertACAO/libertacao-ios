@@ -1,28 +1,22 @@
 //
-//  ProfileViewController.swift
+//  LoginViewController.swift
 //  LibertAÇÃO
 //
-//  Created by Pedro Rodrigues on 12/30/15.
+//  Created by Pedro Rodrigues on 12/31/15.
 //  Copyright © 2015 Pedro Howat. All rights reserved.
 //
 
 import UIKit
 import Parse
+import SVProgressHUD
 
-class ProfileViewController: UIViewController {
+class LoginViewController: UIViewController {
 
-    @IBOutlet weak var tabItem: UITabBarItem!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("DELETEME: 1")
-        if let curUser = PFUser.currentUser() {
-            print("DELETEME: 2")
-            print(curUser)
-        } else {
-            print("DELETEME: 3")
-            self.performSegueWithIdentifier("goToLogin", sender: self)
-        }
+        print("DELETEME: OI")
 
         // Do any additional setup after loading the view.
     }
@@ -42,5 +36,18 @@ class ProfileViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func login(sender: UIButton) {
+        SVProgressHUD.show()
+        PFUser.logInWithUsernameInBackground(usernameTextField.text!, password: passwordTextField.text!) { (user, error) -> Void in
+            if error == nil {
+                print("DELETEME: Logged in")
+            } else {
+                print(error)
+                Alert.show(self, title: "TODO", message: "TODO: Specifiy error type")
+                
+            }
+        }
+        
+    }
 
 }

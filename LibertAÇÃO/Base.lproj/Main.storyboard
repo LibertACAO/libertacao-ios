@@ -192,6 +192,57 @@
             </objects>
             <point key="canvasLocation" x="2313" y="436"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="L7F-wW-b9n">
+            <objects>
+                <viewController id="ayN-X7-QcU" customClass="LoginViewController" customModule="LibertAC_A_O" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eoq-lw-3v2"/>
+                        <viewControllerLayoutGuide type="bottom" id="HYj-LQ-LQb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="klB-VE-n7i">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1y0-S1-Yho">
+                                <rect key="frame" x="0.0" y="255" width="600" height="110"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WI4-3q-H8b">
+                                        <rect key="frame" x="258" y="0.0" width="85" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tY2-wY-vvg">
+                                        <rect key="frame" x="259" y="40" width="83" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTw-4q-p2f">
+                                        <rect key="frame" x="281" y="80" width="38" height="30"/>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="login:" destination="ayN-X7-QcU" eventType="touchUpInside" id="FUw-gV-QiR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1y0-S1-Yho" firstAttribute="centerY" secondItem="klB-VE-n7i" secondAttribute="centerY" id="cfx-hG-0wW"/>
+                            <constraint firstItem="1y0-S1-Yho" firstAttribute="width" secondItem="klB-VE-n7i" secondAttribute="width" id="dal-sE-UWc"/>
+                            <constraint firstItem="1y0-S1-Yho" firstAttribute="centerX" secondItem="klB-VE-n7i" secondAttribute="centerX" id="mnW-sp-vac"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="tY2-wY-vvg" id="NlG-4t-LQv"/>
+                        <outlet property="usernameTextField" destination="WI4-3q-H8b" id="DaM-KU-M9J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vfX-sN-PPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="-13"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="KBw-Uz-9VN">
             <objects>
@@ -208,6 +259,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="first" id="Mmy-eu-v21"/>
                     <connections>
                         <outlet property="tabItem" destination="Mmy-eu-v21" id="hmi-dc-s5E"/>
+                        <segue destination="ayN-X7-QcU" kind="show" identifier="goToLogin" id="PGn-DW-fYy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0KX-ZH-hdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
